@@ -62,10 +62,9 @@ createApp({
             cancella(index){
                 this.listaAzioni.splice(index, 1)
             },
-            completed(index){
-                this.listaSpesa[index].completed =  !this.listSpesa[index].done;
+            completedAction(index){
+                this.listaSpesa[index].completed = true;
             }
-
         },
         mounted() {
 
