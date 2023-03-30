@@ -21,11 +21,11 @@
             </div>
             <ul v-if="listaAzioni.length > 0" class="justify-content-between">
                 <li  v-for="(element, index) in listaAzioni"class="justify-content-between">
-                    <span>{{element}}</span>
+                    <span>{{element.name}}</span>
                     <button class="btn btn-danger" @click="cancella(index)">Canc</button>
                 </li>
             </ul>
-            <h3 v-else> La lista della spesa cose da fare è vuota.</h3>
+            <h3 v-else> La lista delle cose da fare è vuota.</h3>
         </div>
     </div>
     
