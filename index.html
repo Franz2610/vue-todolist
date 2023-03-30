@@ -16,19 +16,20 @@
         <div class="container align-items-center text-center">
             <div class="inputContainer">
                 <h1>Lista delle cose da fare</h1>
-                <input type="text" name="listaAzioni" id="element" v-model="nuovaAzione" @keyup.enter="inserisci" class="">
-                <button class="btn btn-success" @click="inserisci" class="">Invia</button>
+                <input type="text" name="listaAzioni" id="element" v-model="nuovaAzione" @keyup.enter="inserisci" placeholder="Cosa fare oggi" class="">
+                <button class="btn btn-success" @click="inserisci" class="">Aggiungi</button>
             </div>
             <div class="listaAzioniTotali justify-content-between">
                 <ul v-if="listaAzioni.length > 0">
-                    <li  v-for="(element, index) in listaAzioni" @click="completedAction(index)" :class="element.completed ? 'alert alert-success' : '' ">
-                        <div class="elementName">
-                        <span>{{element.name}}</span>
-                        </div>
-                        <div class="buttoncanc">
-                            <button class="btn btn-danger" @click="cancella(index)">X</button>
-                        </div>
+
+                    <li  v-for="(element, index) in listaAzioni" :key="index" 
+                    @click="completedAction(index)" :class="element.completed ? 'alert alert-success text-decoration-line-through': ''">
+                        <span >{{element.name}}</span>
+                        <img :src="element.image">
+                        <span>{{element.text}}</span>
+                        <button class="btn btn-danger" @click.stop="cancella(index)">X</button>
                     </li>
+
                 </ul>
                 <h3 v-else> La lista delle cose da fare è vuota.</h3>
             </div>

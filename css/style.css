@@ -7,3 +7,11 @@
 ul{
     list-style: none;
 }
+.done{
+    background-color: green;
+}
+
+img{
+    width: 10%;
+    margin: 20px;
+}
