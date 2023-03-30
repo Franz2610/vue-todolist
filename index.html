@@ -21,7 +21,7 @@
             </div>
             <div class="listaAzioniTotali justify-content-between">
                 <ul v-if="listaAzioni.length > 0">
-                    <li  v-for="(element, index) in listaAzioni" @click="completed(index)" :class="element.completed ? 'alert alert-success' : '' ">
+                    <li  v-for="(element, index) in listaAzioni" @click="completedAction(index)" :class="element.completed ? 'alert alert-success' : '' ">
                         <div class="elementName">
                         <span>{{element.name}}</span>
                         </div>
